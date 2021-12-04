@@ -12,6 +12,7 @@ h1 {
 main {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 section.painel-cursos {

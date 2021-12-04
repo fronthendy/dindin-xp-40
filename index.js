@@ -54,4 +54,34 @@ function adicionarAula(idCurso, linkAula) {
     }
 }
 
+// cadastro de curso
+let btnEnviar = document.querySelector('#btnEnviar');
+
+btnEnviar.onclick = function (evento) {
+    // prevenindo comportamento padrão
+    evento.preventDefault();
+
+    // capturar campos do formulário
+    let titulo_input = document.querySelector('#titulo');
+    let descricao_input = document.querySelector('#descricao');
+    let professor_input = document.querySelector('#professor');
+
+    //criando o novo curso a partir dos dados do form
+    let novoCurso = {
+        id: cursos.length,
+        titulo: titulo_input.value,
+        descricao: descricao_input.value,
+        professor: professor_input.value,
+        listaAulas: []
+    };
+
+    // adicionando novo curso na lista
+    cursos.push(novoCurso);
+    // atualizar lista de cursos no HTML
+    listarCursos();
+
+}
+
+
+
 listarCursos();
